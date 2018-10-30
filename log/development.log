@@ -194,3 +194,42 @@ Processing by ArticlesController#update as HTML
   [1m[35m (1.9ms)[0m  commit transaction
 Redirected to http://165.227.81.218:54694/articles/1
 Completed 302 Found in 16ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/articles/1" for 70.15.63.193 at 2018-10-30 03:29:00 +0000
+Cannot render console from 70.15.63.193! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered articles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/articles/1/edit" for 70.15.63.193 at 2018-10-30 03:29:17 +0000
+Cannot render console from 70.15.63.193! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered articles/_form.html.erb (1.4ms)
+  Rendered articles/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles" for 70.15.63.193 at 2018-10-30 03:29:19 +0000
+Cannot render console from 70.15.63.193! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/articles/1" for 70.15.63.193 at 2018-10-30 03:29:27 +0000
+Cannot render console from 70.15.63.193! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hhJPz7RtQN6DVC1A804w9GNY13a2hy3cjIEOyXgcsof8V6OKL58rbTRWqmCc2JMlNetDHX4sRTN5Euo8i044uw==", "id"=>"1"}
+  [1m[35mArticle Load (0.1ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "articles" WHERE "articles"."id" = ?  [["id", 1]]
+  [1m[36m (81.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.81.218:54694/articles
+Completed 302 Found in 85ms (ActiveRecord: 82.1ms)
